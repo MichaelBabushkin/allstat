@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone 
 
 class teamPlayers(models.Model):
+    team = models.CharField("team", max_length=24)
     player_id = models.CharField("player_id", max_length=24)
     player_name = models.CharField("player_name", max_length=50)
     games = models.CharField("games", max_length=10)
@@ -23,4 +24,4 @@ class teamPlayers(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.name
+        return self.team
